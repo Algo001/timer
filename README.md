@@ -7,7 +7,7 @@ It is designed to be user-friendly and functional for a variety of timing purpos
 
 Approved by my Mother ✅✅✅
 
-Engage with the features on the project at --https://algo001.github.io/timer/--
+Engage with the features on my website at --https://algo001.github.io/timer/--
 
 ![Screenshot 2023-04-23 200739](https://user-images.githubusercontent.com/103477351/233874208-748e1c1d-b17e-4c9b-88c2-e5ce08d22e9f.png)
 ![Screenshot 2023-04-23 200728](https://user-images.githubusercontent.com/103477351/233874213-f80ac4ef-eb2b-4144-a425-85e9e98b914c.png)
