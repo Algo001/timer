@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Timer Website</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <script src="https://kit.fontawesome.com/62d2573ceb.js" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  </head>
+  <body>
+    <div class="timer-card card">
+      <div class="top-controls">
+        <button id="stopwatch-btn">Stopwatch</button>
+        <button id="timer-btn">Timer</button>
+        <div class="theme-toggle">
+          <button id="theme-toggle-btn"><i class="fas fa-adjust"></i></button>
+          <div class="theme-options">
+            <button id="light-theme-btn">Light</button>
+            <button id="dark-theme-btn">Dark</button>
+          </div>
+        </div>
+      </div>
+      <div class="timer watch-screen" id="timer-screen">
+        <div class="timer-display">
+          <span id="hours">Welcome</span>:<span id="minutes"></span><span id="seconds">00</span>
+        </div>
+        <div class="timer-controls">
+          <button id="start">Start</button>
+          <button id="pause">Pause</button>
+          <button id="reset">Reset</button>
+          <button id="lap">Lap</button>
+        </div>
+        <div class="lap-card timer">
+          <div id="lap-times"></div>
+        </div>
+      </div>
+      <div class="timer timer-screen card" id="countdown-timer-screen">
+        <div class="timer-display">
+          <span id="countdown-minutes">Timer</span>:<span id="countdown-seconds">00</span>
+        </div>
+        <div class="timer-controls">
+          <div class="slider-container">
+            <label for="countdown-minutes-slider">Minutes:</label>
+            <div id="countdown-minutes-slider"></div>
+            <div class="slider-value" id="countdown-minutes-value"></div>
+          </div>
+          <div class="slider-container">
+            <label for="countdown-seconds-slider">Seconds:</label>
+            <div id="countdown-seconds-slider"></div>
+            <div class="slider-value" id="countdown-seconds-value"></div>
+          </div>
+          <button id="start-countdown">Start</button>
+          <button id="pause-countdown">Pause</button>
+          <button id="reset-countdown">Reset</button>
+        </div>
+      </div>
+      <script src="app.js"></script>
+      <script src="https://code.jquery.com/ui/1.13.0/jquery-ui.min.js"></script>
+    </div>
+  </body>
+</html>

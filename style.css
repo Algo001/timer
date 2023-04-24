@@ -1,0 +1,493 @@
+body {
+  animation: fade-in 1s ease-in-out forwards;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+}
+
+
+/* CSS styling for a card element with background color, 
+border radius, box shadow, padding, margin, and transform properties. 
+Includes transition and animation effect on hover. */
+.card {
+  background-color: var(--bg-color);
+  border-radius: 19px;
+  box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.2);
+  padding: 10px;
+  margin: 5px;
+  margin-top: 10px;
+  position: relative;
+  transform: scale(1);
+  transition: transform 0.2s ease-out;
+  animation: fade-in 1s ease-in-out forwards;
+
+}
+
+/* This is the hover effect for the card element. 
+It scales the element slightly when it is hovered over. */
+.card:hover {
+  transform: scale(1.01);
+}
+
+/* screen for the stopwatch */
+.watch-screen {
+  border-radius: 21px;
+  background-color: var(--bg-color);
+  display: flex;
+  justify-content: center;
+  border: 2.5px solid darkgray;
+  box-shadow: inset 0 0 20px rgba(255, 255, 255, 0.2), 0 0 30px rgba(0, 0, 0, 0.5);
+  position: flex;
+  overflow: hidden;
+  animation: fade-in 1s ease-in-out forwards;
+
+}
+
+.watch-screen:hover {
+  transform: scale(1.01);
+  box-shadow: inset 0 0 20px rgba(255, 255, 255, 0.4), 0 0 50px rgba(0, 0, 0, 0.7);
+}
+
+/* screen for countdown-timer */
+.timer-screen {
+  margin-top: 3%;
+  border-radius: 21px;
+  background-color: var(--bg-color);
+  display: flex;
+  justify-content: center;
+  border: 2.5px solid darkgray;
+  box-shadow: inset 0 0 20px rgba(255, 255, 255, 0.2), 0 0 30px rgba(0, 0, 0, 0.5);
+  position: flex;
+  overflow: hidden;
+}
+
+.timer-screen:hover {
+  transform: scale(1.01);
+  box-shadow: inset 0 0 20px rgba(149, 147, 147, 0.4), 0 0 50px rgba(0, 0, 0, 0.7);
+}
+
+/* Style the countdown timer or stopwatch with a modern design, 
+using a rounded container with a box shadow and large, bold digits 
+in a custom color with a subtle text shadow. The timer is centered 
+using flexbox and has a smooth transition effect for animations. */
+.timer {
+  background: var(--timer-color);
+  border-radius: 20px;
+  box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.2);
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 80vh;
+  margin-top: 30px;
+  transform: translateY(0);
+  transition: transform 0.2s ease-out;
+}
+
+.timer-display {
+  font-size: 7rem;
+  font-weight: bold;
+  color: var(--text-color);
+  text-shadow: 1px 1.5px #4CAF50;
+  
+}
+
+/*Styling for the buttons in the timer controls.  */
+.timer-controls button {
+  background-color: #4CAF50;
+  border: none;
+  border-radius: 50px;
+  color: var(--text-color);
+  font-size: 15px;
+  padding: 10px 20px;
+  margin: 1rem;
+  cursor: pointer;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: box-shadow 0.3s ease;
+  position: relative;
+}
+
+/*Styling for the buttons when hovered over with the cursor.  */
+.timer-controls button:hover {
+  background-color: #54ba57;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+/*Applies styling for the buttons when clicked.*/
+.timer-controls button:active {
+  background-color: #4CAF50;
+  transform: translateY(2px);
+}
+
+/* Styling for the buttons when disabled. */
+.timer-controls button:disabled {
+  background: linear-gradient(to bottom, rgba(169, 169, 169, 0.8), rgba(169, 169, 169, 0)), transparent;
+  color: var(--text-color);
+  cursor: not-allowed;
+}
+
+/* styling when the cursor hovers over the disabled button. */
+.timer-controls button:disabled:hover {
+  background-color: #4CAF50;
+}
+
+/* Adds a gradient effect when hovering over the buttons. */
+.timer-controls button:after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to bottom, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.3));
+  z-index: 1;
+  border-radius: 50px;
+  pointer-events: none;
+}
+
+.timer-controls button:hover:after {
+  background: linear-gradient(to bottom, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.4));
+}
+
+/* This section defines the styling for the slider container that holds the slider bar for setting 
+the minutes and seconds of the countdown timer */
+.slider-container {
+  margin-bottom: 20px;
+  opacity: 0;
+  animation: fade-in 0.5s ease-in-out forwards;
+  border-radius: 5%;
+}
+
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.ui-slider {
+  height: 10px;
+  background-color: var(--bg-color);
+  border: none;
+  box-shadow: none;
+  border-radius: 5%;
+}
+
+.ui-slider-handle {
+  height: 30px;
+  width: 30px;
+  background: linear-gradient(to right, #e1dd09, #74d95d);
+  border: none;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3), 0 1px 2px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+  position: relative;
+  top: -3px;
+  animation: pulse 1s infinite;
+  border-radius: 5%;
+}
+
+.ui-slider-range {
+  background: linear-gradient(to bottom, #a6cda6, #2fde29);
+  height: 80%;
+  border-radius: 5%;
+}
+
+.ui-slider-handle:before {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0.5rem;
+  height: 0.5rem;
+  border-radius: 5%;
+  background: #ffffff;
+  border: 2px solid #63cb40;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3), 0 1px 2px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+  transform: translate(-50%, -50%);
+  transition: all 0.2s ease-in-out;
+}
+
+.ui-slider-handle:hover:before {
+  transform: translate(-50%, -50%) scale(1.5);
+  box-shadow: 0 6px 10px rgba(246, 246, 246, 0.62), 0 3px 6px rgba(0, 0, 0, 0.2);
+}
+
+
+/* Top Controls, Styling for the buttons "stop","pause","lap",reset */
+.top-controls {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: -25px;
+}
+
+/* Round Buttons */
+#stopwatch-btn,
+#timer-btn{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: none;
+  border-radius: 21px;
+  width: 100%;
+  height: 25px;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+#theme-toggle-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: none;
+  border-radius: 15px;
+  width: 100%;
+  height: 25px;
+  box-shadow: 0px 2px 5px rgba(255, 255, 255, 0.2);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  background: linear-gradient(to right, lightslategray, lightgrey); 
+
+}
+
+#stopwatch-btn:hover,
+#timer-btn:hover,
+#theme-toggle-btn:hover {
+  color:rgb(0, 0, 0);
+  background-color: rgb(123, 224, 123);
+  transform: translateY(-2px);
+  box-shadow: 0px 7px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Animated Buttons */
+#stopwatch-btn:active,
+#timer-btn:active,
+#theme-toggle-btn:active {
+  color: var(--text-color);
+  transform: translateY(2px);
+  box-shadow: 0px 1px 3px rgba(200, 28, 28, 0.2);
+}
+
+/* Stopwatch Button */
+#stopwatch-btn {
+  font-size: 16px;
+  background: linear-gradient(to bottom, rgba(169, 169, 169, 0.8), rgba(169, 169, 169, 0)), transparent;
+  color: var(--text-color);
+}
+
+/* Timer Button */
+#timer-btn {
+  font-size: 16px;
+  color: var(--text-color);
+   background: linear-gradient(to bottom, rgba(169, 169, 169, 0.8), rgba(169, 169, 169, 0)), transparent;
+}
+
+
+
+/* lapCard */
+.lap-card {
+  background-color: transparent;
+  border : 2px white;
+  border-radius: 10px;
+  padding: 20px;
+  margin: 0 auto;
+  width: 90%;
+  max-width: 500px;
+  height: 25%;
+  overflow-y: auto;
+}
+
+#lap-times {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column-reverse;
+  font-display: center;
+  color: var(--text-color);
+  font-size: 2rem;
+  overflow: hidden;
+  letter-spacing: 2px;
+}
+
+#lap-times > div {
+  margin-bottom: 5px;
+}
+
+
+/* Theme Toggle Button */
+#theme-toggle-btn {
+  font-size: 17px;
+  color: var(--text-color);
+
+;
+}
+
+.theme-toggle {
+  z-index: 1;
+  position: relative;
+  display: inline-block;
+  padding: 10px;
+  background-color: var(--bg-color);
+  border: 3px linear-gradient(to right, rgba(169, 169, 169, 0.4),rgba(169, 169, 169, 1));
+  border-radius: 5px;
+  background: transparent;
+
+
+}
+
+/* Hide the theme options by default */
+.theme-options {
+  display: none;
+  position: absolute;
+  top: 100%;
+  right: 0;
+  background-color: #333;
+  padding: 0.5rem;
+  border-radius: 0.25rem;
+  box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+}
+
+/* Style the theme option buttons */
+.theme-options button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  color: whitesmoke;
+  font-size: 0.9rem;
+  margin-right: 0.5rem;
+  margin-top: 0.5rem;
+}
+
+/* Change the color of the button on hover */
+.theme-options button:hover {
+  color: #46df20d4;
+}
+
+/* Show the theme options when the theme toggle is hovered */
+.theme-toggle:hover .theme-options {
+  display: block;
+}
+
+
+
+/* scrollbar for all elements */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+/* Define scrollbar track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+/* Define scrollbar thumb */
+::-webkit-scrollbar-thumb {
+  background-color: #333;
+  border-radius: 10px;
+}
+
+/* Define scrollbar thumb on hover */
+::-webkit-scrollbar-thumb:hover {
+  background-color: #555;
+}
+
+/* Show scrollbar on hover */
+::-webkit-scrollbar:hover {
+  display: block;
+}
+
+
+
+/* Stlying for mobile devices! */
+@media (max-width: 767px) {
+
+  body {
+    font-size: 16px;
+  }
+  
+  .container {
+    width: 100%;
+  }
+
+  /* Lap card */
+  .lap-card {
+    width: 90%;
+    height: auto;
+    padding: 10px;
+    margin: 10px auto;
+    border-width: 1px;
+    border-radius: 5px;
+    font-size: 14px;
+  }
+
+  /* Lap times */
+  #lap-times {
+    font-size: 24px;
+    margin-top: 10px;
+  }
+
+  /* Card */
+  .card {
+    padding: 5px;
+    margin: 3px;
+    margin-top: 7px;
+    border-radius: 10px;
+  }
+
+  /* Watch screen */
+  .watch-screen {
+    border-radius: 10px;
+    border-width: 1.5px;
+  }
+
+  /* Timer */
+  .timer {
+    height: auto;
+    margin-top: 10px;
+  }
+
+  .timer-display {
+    font-size: 5rem;
+  }
+
+  .timer-controls button {
+    font-size: 18px;
+    padding: 10px 20px;
+    margin: 10px;
+  }
+
+  /* Top controls */
+  .top-controls {
+    margin-bottom: -15px;
+  }
+
+  /* Round buttons */
+  #stopwatch-btn,
+  #timer-btn,
+  #theme-toggle-btn {
+    height: 30px;
+    border-radius: 15px;
+  }
+
+  /* Animated buttons */
+  #stopwatch-btn:hover,
+  #timer-btn:hover,
+  #theme-toggle-btn:hover {
+    transform: translateY(-1px);
+  }
+
+  #stopwatch-btn:active,
+  #timer-btn:active,
+  #theme-toggle-btn:active {
+    transform: translateY(1px);
+    box-shadow: none;
+  }
+
+}
