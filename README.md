@@ -1,6 +1,6 @@
 This project is a customizable timer website that includes a stopwatch and countdown timer functionality. 
 
-The webpage has buttons to control the timer, including start, pause, reset, and lap. Users can also switch between light and dark themes and adjust the minutes and seconds of the countdown timer using sliders. 
+The webpage has buttons to control the timer, including start, pause, reset, and lap. Users can also switch between light and dark themes and adjust the minutes and seconds of the countdown timer using sliders. The redesigned countdown timer now includes Pomodoro, Short Break, and Long Break modes for quick setup.
 
 The website is built using HTML, CSS, and JavaScript, and includes external libraries such as jQuery and Font Awesome. 
 It is designed to be user-friendly and functional for a variety of timing purposes, such as exercise routines, cooking, and more.
