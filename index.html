@@ -38,15 +38,26 @@
           <span id="countdown-minutes">Timer</span>:<span id="countdown-seconds">00</span>
         </div>
         <div class="timer-controls">
-          <div class="slider-container">
-            <label for="countdown-minutes-slider">Minutes:</label>
-            <div id="countdown-minutes-slider"></div>
-            <div class="slider-value" id="countdown-minutes-value"></div>
+          <div id="countdown-sliders">
+            <div class="slider-container">
+              <label for="countdown-minutes-slider">Minutes:</label>
+              <div id="countdown-minutes-slider"></div>
+              <div class="slider-value" id="countdown-minutes-value"></div>
+            </div>
+            <div class="slider-container">
+              <label for="countdown-seconds-slider">Seconds:</label>
+              <div id="countdown-seconds-slider"></div>
+              <div class="slider-value" id="countdown-seconds-value"></div>
+            </div>
           </div>
-          <div class="slider-container">
-            <label for="countdown-seconds-slider">Seconds:</label>
-            <div id="countdown-seconds-slider"></div>
-            <div class="slider-value" id="countdown-seconds-value"></div>
+          <div class="mode-select">
+            <label for="mode-select">Mode:</label>
+            <select id="mode-select">
+              <option value="custom">Custom</option>
+              <option value="pomodoro">Pomodoro</option>
+              <option value="short-break">Short Break</option>
+              <option value="long-break">Long Break</option>
+            </select>
           </div>
           <button id="start-countdown">Start</button>
           <button id="pause-countdown">Pause</button>

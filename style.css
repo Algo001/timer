@@ -89,7 +89,8 @@ using flexbox and has a smooth transition effect for animations. */
   font-weight: bold;
   color: var(--text-color);
   text-shadow: 1px 1.5px #4CAF50;
-  
+  font-family: 'Courier New', monospace;
+  transition: color 0.5s ease;
 }
 
 /*Styling for the buttons in the timer controls.  */
@@ -156,6 +157,29 @@ the minutes and seconds of the countdown timer */
   opacity: 0;
   animation: fade-in 0.5s ease-in-out forwards;
   border-radius: 5%;
+}
+
+/* Style for the mode selector */
+.mode-select {
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+#mode-select {
+  padding: 8px 12px;
+  border-radius: 10px;
+  font-size: 1rem;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  border: 1px solid #ccc;
+  transition: background-color 0.3s ease;
+}
+
+#mode-select:hover {
+  background-color: #54ba57;
+  color: #000;
 }
 
 @keyframes fade-in {
@@ -461,6 +485,11 @@ the minutes and seconds of the countdown timer */
     font-size: 18px;
     padding: 10px 20px;
     margin: 10px;
+  }
+
+  #mode-select {
+    font-size: 16px;
+    padding: 6px 10px;
   }
 
   /* Top controls */

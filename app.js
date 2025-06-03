@@ -129,8 +129,34 @@ document.addEventListener("click", (event) => {
 
 
 $(function() {
-  var timer, minutes, seconds, totalSeconds;
+  var timer, minutes = 0, seconds = 0, totalSeconds;
   var handle = $(".ui-slider-handle");
+  var modeSelect = $("#mode-select");
+
+  modeSelect.on("change", function() {
+    const mode = $(this).val();
+    if (mode === "pomodoro") {
+      minutes = 25;
+      seconds = 0;
+      $("#countdown-sliders").hide();
+    } else if (mode === "short-break") {
+      minutes = 5;
+      seconds = 0;
+      $("#countdown-sliders").hide();
+    } else if (mode === "long-break") {
+      minutes = 15;
+      seconds = 0;
+      $("#countdown-sliders").hide();
+    } else {
+      $("#countdown-sliders").show();
+      minutes = $("#countdown-minutes-slider").slider("value");
+      seconds = $("#countdown-seconds-slider").slider("value");
+    }
+    $("#countdown-minutes-slider").slider("value", minutes);
+    $("#countdown-seconds-slider").slider("value", seconds);
+    totalSeconds = minutes * 60 + seconds;
+    updateTimerDisplay();
+  });
 
   // Initialize the sliders
   $("#countdown-minutes-slider").slider({
@@ -216,6 +242,8 @@ $(function() {
     totalSeconds = 0;
     minutes = 0; // set minutes to 0
     seconds = 0; // set seconds to 0
+    $("#mode-select").val("custom");
+    $("#countdown-sliders").show();
     $("#countdown-minutes-slider").slider("value", 0);
     $("#countdown-seconds-slider").slider("value", 0);
     $("#countdown-minutes").text("00");
